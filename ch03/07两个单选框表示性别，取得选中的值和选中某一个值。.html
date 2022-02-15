@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>取得单选按钮牛选中的值，或选中某一个值</title>
+</head>
+<body>
+    <form action="#" method="POST">
+        <input id="sex1" type="radio" name="sex" value="男" /><label for="sex_boy">男</label>
+        <input id="sex2" type="radio" name="sex" value="女" /><label for="sex_girl">女</label>
+        </br>
+        <input type="button" value="取得选中值" onclick="alert(getRadioValue())"></input>
+        <input type="button" value="选中男" onclick="setRadio('男')">
+        <input type="button" value="选中女" onclick="setRadio('女')">
+        <script>
+            //方法一：通过获取radio的数组的checked值来确定它的val
+            function getRadioValue(){
+                var radio = document.getElementsByName("sex");
+                for (var i=0; i<radio.length; i++){
+                    if(radio[i].checked)
+                    {
+                        return radio[i].value;
+                    }
+                }
+            }
+            //方法二（1）：通过传入的参数确定radio的值
+            // function setRadio(sex){
+            // var sex1=document.getElementById("sex1");
+            // var sex2=document.getElementById("sex2");
+            //     if(sex=="男"){
+            //         sex1.checked=true;
+            //         sex2.checked=false;
+            //     }
+            //     else{
+            //         sex1.checked=false;
+            //         sex2.checked=true;
+            //     }
+            // }
+            // 方法二（2）:通过传入的参数进行遍历name为sex的radio当值相等时改为checked=true。
+            function setRadio(sexValue){
+                var radio = document.getElementsByName("sex");
+                for(var i=0 ; i<radio.length ; i++){
+                    if(radio[i].value==sexValue)
+                    radio[i].checked=true;
+                    else{
+                        radio[i].checked=false;
+                    }
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

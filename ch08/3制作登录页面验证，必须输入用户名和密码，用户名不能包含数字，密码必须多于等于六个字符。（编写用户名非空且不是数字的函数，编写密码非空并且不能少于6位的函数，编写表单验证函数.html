@@ -1,0 +1,122 @@
+<!-- 3制作登录页面验证，必须输入用户名和密码，用户名不能包含数字，密码必须多于等于六个字符。（编写用户名非空且不是数字的函数，编写密码非空并且不能少于6位的函数，编写表单验证函数 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" name="form">
+        <table width="100%">
+            <tr>
+                <th colspan="2" ALIGN=CENTER>
+                    <font size="5">注册新用户</font>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td width="100"></td>
+                <td ALIGN=CENTER BGCOLOR="#ffffff">
+                    <table width="400" cellpadding="4">
+                        <tr>
+                            <td ALIGN=RIGHT>
+                                <font size="3" face="微软雅黑">用户名</font>
+                            </td>
+                            <td ALIGN=LEFT><input type="text" id="name"></td>
+                        </tr>
+                        <tr>
+                            <td ALIGN=RIGHT>
+                                <font size="3" face="微软雅黑">登陆邮箱</font>
+                            </td>
+                            <td ALIGN=LEFT><input type="text" id="mail"></td>
+                        </tr>
+                        <tr>
+                            <td ALIGN=RIGHT>
+                                <font size="3" face="微软雅黑">密码</font>
+                            </td>
+                            <td ALIGN=LEFT><input type="password" id="password"></td>
+                        </tr>
+                        <tr>
+                            <td ALIGN=RIGHT>
+                                <font size="3" face="微软雅黑">再输一次</font>
+                            </td>
+                            <td ALIGN=LEFT><input type="password" id="password2"></td>
+                        </tr>
+                    </table>
+                    <script>
+                        var input = document.getElementsByTagName("input");
+                        for (var i = 0; i < input.length; i++) {
+                            if (input[i].type == "text" || input[i].type == "password") {
+                                input[i].onblur = inputBlur;
+                            }
+                        }
+                        function inputBlur(e) {
+                            var event = e || window.event;
+                            var idname = this.id;
+                            var val = this.value;
+                            if (this.value.trim() == "") {
+                                console.log("文本框不能为空!");
+                                return false;
+                            }
+                            var strMsg = getMsg(idname);
+                            if (strMsg['reg'].test(val)) {
+
+                                console.log("True");
+                                console.log(strMsg.msg);
+                            }
+                            else {
+                                console.log(val);
+                                console.log("false");
+                                return false;
+                            }
+
+                        }
+                        function getMsg(idname) {
+                            var reg = '';
+                            var msg = '';
+                            switch (idname) {
+                                case "name":
+                                    reg = /\D{6,}/;
+                                    console.log(reg);
+                                    msg = "用户名正确";
+                                    break;
+                                case "mail":
+                                    reg = /^.+@(\w)+(\..+)+$/;
+                                    msg = "邮箱正确";
+                                    break;
+                                case "password":
+                                    reg = /^\w{6,20}$/;
+                                    msg = "密码正确";
+                                    break;
+                                case "password2":
+                                    var input3text = document.getElementsByTagName("input")[2].value;
+                                    reg = RegExp('^' + input3text + '$');
+                                    msg = "重复密码输入正确";
+                                    break;
+                            }
+                            return { "reg": reg, "msg": msg };
+                        }
+                        String.prototype.trim = function () {
+                            var reExtraSpace = /^\s+(.*?)\s+$/;
+                            return this.replace(reExtraSpace, "$1");
+                        }
+                        String.prototype.trimLeft = function () {
+                            var reExtraSpace = /^\s+(.*?)/;
+                            return this.replace(reExtraSpace, "$1");
+                        }
+                        String.prototype.trimRight = function () {
+                            var reExtraSpace = /(.*?)\s+$/;
+                            return this.replace(reExtraSpace, "$1");
+                        }
+                    </script>
+</body>
+
+</html>

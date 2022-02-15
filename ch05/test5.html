@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        height: 15px;
+        width:15px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: burlywood;
+        color: red;
+        font-size: 10px;
+        line-height: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div id="box"></div>
+    <script>
+        var circle = document.getElementById("box");
+        circle.onclick = function(){
+            animate(circle , {'left':200,'top':50});
+        }
+        function animate(obj , option)
+        {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                var flag = true;
+                for(var k in option){
+                    //定义leader（行走距离）
+                    var leader = parseInt(getStyle(obj, k)) || 0;
+                    console.log("leader="+leader);
+                    //定义当前的位置
+                    var target = option[k];
+                    console.log("target"+target);
+                    var step = (target - leader) /10;
+                    step = step > 0  ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader + 'px';
+                    if(leader != target){
+                        flag = false;
+                    }
+                }
+                if(flag){
+                clearInterval(obj.timer);
+            }
+            },10);
+        }
+        function getStyle(obj, i){
+            if(window.getComputedStyle){
+                return window.getComputedStyle(obj,false)[i];
+            }
+            else{
+                return obj.currentStyle[i];
+            }
+        }
+    </script>
+</body>
+</html>

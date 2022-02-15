@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type:none;
+            /* background-color: red; */
+            position: fixed;  
+            margin-left: 520px;
+            bottom: 70px;
+            padding: 0;
+        }
+
+        li {
+            height: 100px;
+            width: 40px;
+            background-color: #6d3ea7;
+            float: left;
+            position: relative;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        a {
+            height: 100px;
+            width: 40px;
+            background-color: rgba(183, 174, 195,0.4);
+            transform-origin:0 100%;
+            transform:rotateZ(90deg);
+            display: inline-block;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            transition:all .3s ease-out;
+        }
+        li:hover a{
+            display: inline-block;
+            transform: rotateZ(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        
+        <li>
+            <a>商品</a>
+        </li>
+    </ul>
+</body>
+
+</html>

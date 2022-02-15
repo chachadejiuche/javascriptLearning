@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        div:nth-child(-n+8) {
+            height: 300px;
+            width: 100%;
+            background: linear-gradient(black, white);
+            position: relative;
+        }
+
+        #i {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            height: 30px;
+            width: 200px;
+            background-color: blanchedalmond;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="i">点我上升</div>
+    <script>
+        var i = document.getElementById("i");
+        var mytimer;
+        i.onclick = function () {
+            clearInterval("mytimer");
+            // scrollTo(0,0); 
+            mytimer = setInterval(move,10);
+        }
+        window.onscroll = function () {
+            if (window.scrollY < 20) {
+                i.style.display = "none";
+            }
+            else {
+                i.style.display = "inline-block"
+            }
+        }
+        function move() {
+            document.documentElement.scrollTop = document.documentElement.scrollTop - 10;
+            if(window.scrollY==0) {
+                clearInterval(mytimer);
+            }
+        }
+    </script>
+</body>
+
+</html>

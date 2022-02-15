@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.a:hover{
+				color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var apple="(请点击)苹果";
+			document.write("<h1 class='a' onclick='a1()'>"+apple+"<h1>");
+			function a1(){
+				apple = prompt("请输入你想要的内容，如果不更改输入1");
+				if (apple=='1'){
+					document.write("红富士");
+				}
+				else{
+					document.write(apple);
+				}
+			}
+		</script>
+	</body>
+</html>

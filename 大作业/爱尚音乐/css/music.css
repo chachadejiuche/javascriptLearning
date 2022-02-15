@@ -1,0 +1,131 @@
+/* 采用什么编码解析文件 */
+@charset "utf-8";
+
+/* 使用元素选择器 设置背景图片 */
+body {
+	background: url(../img/bg.gif) no-repeat;/* 图片不重复 */
+	background-size: cover;/* 自适应 */
+}
+
+/* --------------------横幅 begin-------------------- */
+/* 设置横幅的宽高背景 */
+.banner {
+	width: 960px;/* 宽 */
+	height: 250px;/* 高 */
+	background: url(../img/m_bg.jpg) no-repeat;/* 背景图片 不重复 */
+	margin: 80px;/* 设置外边距 */
+	opacity: 0.8;/* 透明度 */
+	box-shadow: 10px 15px 15px 1px black;/* 阴影部分 */
+	position: relative;/* 让子元素使用定位相对于其父元素定位 */
+}
+
+/* 设置横幅的li的样式 */
+.banner ul li {
+	list-style: none;/* 取消列表默认样式 */
+	display: inline-block;/* 行内块状元素，类似导航栏的效果 */
+	position: absolute;/* 使用绝对定位，相对于其父元素定位 */
+}
+
+/* 操作图片 */
+.banner ul li img {
+	border-radius: 50%;/* 将图片菱角变圆 */
+	cursor: pointer;/* 鼠标变手势 */
+}
+
+/* 使用类选择器 改变图片的位置 */
+.m1 {top: 30px; left: 90px;}
+.m2 {top: 140px; left: 160px;}
+.m3 {top: 67px; left: 308px;}
+.m4 {top: 50px; left: 500px;}
+.m5 {top: 160px; left: 580px;}
+
+/* 图片旋转的动画 */
+@keyframes img_rotate {
+	from {
+		transform: rotate(0deg);
+	} to {
+		transform: rotate(360deg);
+	}
+}
+
+/* 动画执行的时间 次数 */
+.banner .img_rotate {
+	animation: img_rotate 2s infinite linear;
+}
+/* --------------------横幅 end---------------------- */
+
+/* --------------------播放器 begin-------------------- */
+/* 修改播放器的样式 */
+.music {
+	width: 550px;
+	height: 120px;
+	background: black;
+	position: fixed;
+	left: 0px;
+	bottom: 50px;
+	opacity: 0.8;
+	box-shadow: 10px 15px 15px 1px black;/* 阴影部分 */
+}
+
+/* 调整音乐盒图片的位置 */
+.music .m_img {
+	margin-top: 15px;
+	margin-left: 10px;
+	float: left;/* 左浮动 */
+}
+
+/* 修改音乐盒文本的显示 */
+.music .m_text {
+	float: left;/* 左浮动 */
+    color: white;/* 字体颜色 */
+    font-size: 20px;/* 字体大小 */
+    font-weight: bold;/* 字体加粗 */
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+/* 使得所有a标签一起移动 */
+.music .m_btn {
+	float: left;/* 左浮动 */
+	/* 使用绝对定位，防止歌曲名称过长挤出按钮，div发生样式改变 */
+	position: absolute;
+	left: 320px;
+}
+
+/* 修改a标签 设置宽高及背景图片 */
+.music .m_btn a {
+	float: left;/* 左浮动 */
+	width: 35px;
+	height: 35px;
+	background: url(../img/player_bg.png);
+	margin-top: 50px;
+    margin-left: 20px;
+}
+
+/* 改变上一首的图片 */
+.music .m_btn .m_prev {background-position: -68px 0px;}
+.music .m_btn .m_prev:hover {background-position: -68px -32px;}
+/* 改变暂停的图片 */
+.music .m_btn .m_play {background-position: -104px -5px;}
+.music .m_btn .m_play:hover {background-position: -104px -47px;}
+/* 改变下一首的图片 */
+.music .m_btn .m_next {background-position: -145px 0px;}
+.music .m_btn .m_next:hover {background-position: -145px -32px;}
+
+/* 设置最右边的关闭样式 */
+.music .m_close {
+	float: right;/* 右浮动 */
+	background: url(../img/player_bg.png);/* 背景图片 */
+	width: 23px;/* 宽 */
+	height: 120px;/* 高 */
+	margin-top: 2px;
+    cursor: pointer;/* 鼠标变手势 */
+}
+
+/* 编写js时，更换播放按钮为暂停时编写的代码 */
+.music .m_btn .m_pause {background-position: -292px -93px;}
+.music .m_btn .m_pause:hover {background-position: -334px -93px;}
+
+/* 编写js时，隐藏或者显示播放器时编写的代码 */
+.music .m_open {background-position: -45px 0px;}
+/* --------------------播放器 end---------------------- */

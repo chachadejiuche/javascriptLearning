@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        String.prototype.trim = function(){
+            var reExtraSpace = /^\s+(.*?)\s+$/;
+            return this.replace(reExtraSpace,"$1");
+        }
+        String.prototype.trimLeft = function(){
+            var reExtraSpace = /^\s+(.*?)/;
+            return this.replace(reExtraSpace,"$1");
+        }
+        String.prototype.trimRight = function(){
+            var reExtraSpace = /(.*?)\s+$/;
+            return this.replace(reExtraSpace,"$1");
+        }
+        var str ="   haha  "
+        alert(str);
+        alert("|"+str.trim()+"|");
+        alert("|"+str.trimLeft()+"|");
+        alert("|"+str.trimRight()+"|");
+    </script>
+</body>
+</html>

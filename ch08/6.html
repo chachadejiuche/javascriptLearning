@@ -1,0 +1,34 @@
+6、	制作回车切换效果。（需要用到的属性和方法主要有：onKeyDown()、keyCode、srcElement）
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="in" id="in">
+    <input type="text" name="in" id="in">
+    <input type="text" name="in" id="in">
+    <input type="text" name="in" id="in">
+    <input type="text" name="in" id="in">
+    <input type="text" name="in" id="in">
+    <input type="text" name=""in id="in">
+    <script>
+        var inputs = document.getElementsByTagName("input");
+        for(var i = 0 ; i<inputs.length ; i++){
+            inputs[i].onkeypress = function(e){
+                if(e.keyCode == 13){
+                    for(var i = 0 ; i<inputs.length ; i++){
+                        if (this == inputs[i]) {
+                            var index = i;
+                            break;
+                        }
+                    }
+                    inputs[(i+1)%inputs.length].focus();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

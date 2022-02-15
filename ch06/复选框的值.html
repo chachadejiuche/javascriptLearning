@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" method="get" name="formT">
+    <input type="checkbox" name="v" onclick="havevalue()" value="大树">大树
+    <input type="checkbox" name="v" onclick="havevalue()" value="小花">小花
+    <input type="checkbox" name="v" onclick="havevalue()" value="绿草">绿草
+    <input type="checkbox" name="v" onclick="havevalue()" value="白云">白云
+    <input type="button" value="全选" onclick="checkedAll()">
+    <input type="button" value="全不选" onclick="unCheckedAll()">
+    </form>
+    <script>
+        function havevalue() {
+            let arr = document.forms[0].v;
+            for (var a = 0; a < 4; a++) {
+                if (arr[a].checked) {
+                    alert(arr[a].value);
+                }
+            }
+        }
+        function checkedAll(){
+            let arr = document.forms[0].v;
+            for (var a = 0; a < 4; a++) {
+                arr[a].checked = true;
+            }
+        }
+        function unCheckedAll(){
+            let arr = document.forms[0].v;
+            for (var a = 0; a < 4; a++) {
+                arr[a].checked = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

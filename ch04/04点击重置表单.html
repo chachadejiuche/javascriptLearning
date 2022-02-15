@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="submit" id="tijiao" >
+    <input type="reset" value="reset" id="isNull">
+    <input type="submit" value="submit" id="submit">
+    <script>
+        var t = document.getElementById("tijiao");
+        var s = document.getElementById("submit");
+        var n = document.getElementById("isNull");
+        s.onclick = function(){
+            if(t.value==""){
+                alert("请输入用户名！");
+            }
+        }
+        n.onclick = function(){
+            t.value="";
+        }
+    </script>
+</body>
+</html>

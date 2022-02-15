@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#text{
+				border:1px solid black;
+				}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="bianse" id="text" value="请点我" />
+		<script type="text/javascript">
+				var text = document.getElementById("text");
+				console.log(text);
+				text.onfocus = function(){
+					text.style.background="gray";
+				}
+				text.onblur = function(){
+					text.style.background="white";
+				}
+		</script>
+	</body>
+</html>

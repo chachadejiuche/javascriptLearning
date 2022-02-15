@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .liandong {
+            height: 30px;
+            width: 220px;
+            margin: 10px auto;
+        }
+
+        select {
+            width: 65px;
+            height: 20px;
+            border: 1px solid red;
+            border-radius: 4px 4px;
+            float: left;
+            background-color: salmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="liandong">
+        <select name="province" id="province">
+            <option>请选择</option>
+        </select>
+        <select name="city" id="city">\
+            <option>请选择</option>
+        </select>
+        <select name="area" id="area">
+            <option>请选择</option>
+        </select>
+    </div>
+    <script src="./city.js"></script>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        let pro = $("#province");
+        let ci = $("#city");
+        let ar = $("#area");
+        show();
+        pro.change(function () {
+            let Id;
+            for (let i = 0; i < province.length; i++) {
+                if (pro.find("option:selected").attr("value") === province[i].name) {
+                    Id = province[i].id;
+                    break;
+                }
+            }
+            $("#city option").remove();
+            ci.append("<option>请选择</option>")
+            show2(Id, "city");
+            ci.change(function () {
+                let Id;
+                for (let i = 0; i < city.length; i++) {
+                    if (ci.find("option:selected").attr("value") === city[i].name) {
+                        Id = city[i].id;
+                        break;
+                    }
+                    console.log(Id);
+                }
+                $("#area option").remove();
+                ar.append("<option>请选择</option>")
+                show2(Id, "area")
+            })
+        })
+        function show() {
+            let str;
+            for (let i = 0; i < province.length; i++) {
+                // console.log(province[i]);
+                str = "<option " + "value=" + province[i].name + ">" + province[i].name + "</option>";
+                pro.append(str);
+                str = "";
+            }
+        }
+        function show2(id, place) {
+            let str;
+            if (place === "city") {
+                for (let i = 0; i < city.length; i++) {
+                    if (id == city[i].pid) {
+                        str = "<option " + "value=" + city[i].name + ">" + city[i].name + "</option>";
+                        ci.append(str);
+                        str = "";
+                    }
+                    else {
+                        continue;
+                    }
+                }
+            }
+            if (place === "area") {
+                for (let i = 0; i < area.length; i++) {
+                    if (id == area[i].pid) {
+                        str = "<option " + "value=" + area[i].name + ">" + area[i].name + "</option>";
+                        ar.append(str);
+                        str = "";
+                    }
+                    else {
+                        continue;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

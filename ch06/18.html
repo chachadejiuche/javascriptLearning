@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="#" method="post">
+			<textarea rows="7" cols="10" id="text">
+				
+			</textarea>
+			<p></p>
+			<select name="changeColor">
+				<option class="color" value="red">红色</option>
+				<option class="color" value="blue">蓝色</option>
+				<option class="color" value="green">绿色</option>
+				</select>
+		</form>		
+		<script type="text/javascript">
+			var change = document.getElementsByName("changeColor")[0];
+			var color = document.getElementsByClassName("color");
+			var text = document.getElementById("text");
+			change.onchange = function(){
+				text.style.color=this.value;
+			}
+		</script>
+	</body>
+</html>

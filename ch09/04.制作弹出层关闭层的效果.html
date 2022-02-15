@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        div:nth-child(-n+4){
+            height: 200px;
+            width: 200px;
+            background-color: blueviolet;
+            position: absolute;
+        }
+        div:nth-child(1){
+            top: -30px;
+            left: 20px;
+        }
+        div:nth-child(2){
+            top: 100px;
+            left: 30px;
+            background-color: blue;
+            z-index: 100;
+            display: block;
+        }
+        div:nth-child(3){
+            top: 200px;
+        }
+    </Style>
+</head>
+<body>
+    <div></div>
+    <div class="ceng"></div>
+    <div></div>
+    <div></div>
+    <script src="../JQueryStudying/jquery3.4.js"></script>
+    <script>
+        var i = prompt("弹出层输入1,弹入层输入0");
+        if(i==0){
+            alert();
+            $(".ceng").css("display","none");
+        }
+        if(i==1){
+            $(".ceng").css("display","block");
+        }
+    </script>
+</body>
+</html>

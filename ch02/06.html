@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<span>请输入HelloWorld的次数:</span>
+		<form name="myFrom" action="#" method="post">
+		<input type="text" id="txt" name="txt">
+		</input>
+		</form>
+		
+
+		<input type="button" name="submit" value="提交" onclick="fun1()"></input>
+		<script type="text/javascript">
+			function fun1(){
+				var length = document.myFrom.txt.value;
+				for(var i=0;i<length;i++){
+					document.writeln("HelloWorld");
+				}
+			}	
+		</script>
+	</body>
+</html>

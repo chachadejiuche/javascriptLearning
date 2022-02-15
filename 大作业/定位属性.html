@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            height: 2000px;
+        }
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: blanchedalmond;
+            position: relative;
+            margin-top: 1000px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var mydiv = document.getElementsByTagName("div")[0];
+        document.onclick = function (e){
+            console.log(mydiv.offsetWidth);
+            console.log(document.documentElement.scrollTop);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post" id="myform">
+        球类
+        <p>
+            <select  id="ball" name="ball" multiple="multiple">
+                <option value="Football">足球</option>
+                <option value="Basketball">篮球</option>
+                <option value="Volleyball">排球</option>
+            </select>
+        </p>
+        <input type="button" value="下面添加乒乓球" onclick="add('ball')">
+    </form>
+    <script>
+        function add(box){
+            var form = document.forms[0];
+            var select = form.elements[box];
+            var myopt = new Option("乒乓球","Pingpang");
+            console.log(select.options);
+            select.options[select.options.length]=myopt;
+        }
+    </script>
+</body>
+</html>

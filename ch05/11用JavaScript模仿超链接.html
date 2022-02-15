@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="height: 223px; width: 157px;"onmousedown="changeColor()" onmouseup="toNewpage()"onmouseover="changeBorder()" onmouseleave="cancel()"></div>
+    <script>
+        var color = ['red','yellow','purple','pink'];
+        var n=0;
+        var colorTo=document.getElementById("box");
+        function changeColor(){
+            colorTo.style.backgroundColor=color[n];
+            n = (n+1)%4;
+        }
+        function changeBorder(){
+            colorTo.style.border = "1px solid blue";
+        }
+        function cancel(){
+            colorTo.style.border = "";
+        }
+        function toNewpage(){
+            open("https://baidu.com","_blank");
+        }
+    </script>
+</body>
+</html>

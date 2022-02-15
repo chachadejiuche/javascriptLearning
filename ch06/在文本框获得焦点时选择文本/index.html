@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+	</head>
+	<body>
+		<form>
+			<input value="zhangsan" type="text" name="textbox1"/><br/><br/>
+			<input value="zhangsan" type="text" name="textbox2"/>
+		</form>
+		<script src="EventUtil.js"></script>
+		<script>
+			var textbox=document.forms[0].elements["textbox1"];
+			EventUtil.addHandler(textbox,"focus",function(event){
+				event=EventUtil.getEvent(event);
+				var target=EventUtil.getTarget(event);
+				target.select();
+			})
+		</script>
+	</body>
+</html>

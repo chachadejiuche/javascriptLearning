@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="Myform">
+        <option value="白">白</option>
+        <option value="黄">黄</option>
+        <option value="红">红</option>
+        <option value="蓝">蓝</option>
+    </select>
+    <label id="la"></label>
+    <script>
+        let select1 = document.getElementsByName("Myform")[0];
+        let la = document.getElementById("la");
+            select1.onchange = function(){
+            la.innerHTML =  "他是" + select1.value;
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		请输入字符串并是文本框失去焦点：<input type="text"/>
+		<script type="text/javascript">
+			var a = document.getElementsByTagName("input")[0];
+			console.log(a);
+			a.onblur = function(){
+				var reg = new RegExp('\\d+','g');
+                if(reg.test(a.value)){
+                    console.log("包含数字");
+                }
+                else{
+                    console.log("不包含数字");
+                }
+			}
+		</script>
+	</body>
+</html>

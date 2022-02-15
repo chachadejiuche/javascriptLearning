@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="background-color: yellow; margin: 10px auto; height: 300px; width: 1000px;"></div>
+    <script>
+        var b = document.getElementById("box");
+        b.onmousemove = function (ev){
+            if(window.event) ev=window.event;
+            // var m_left = ev.layerX ||ev.offsetX;
+			// var m_top = ev.layerY ||ev.offsetY;
+            var x = ev.clientX;
+            var y = ev.clientY;
+            // document.title = (m_left+"|"+m_top);
+            document.title = (x+"|"+y);
+        }
+    </script>
+</body>
+</html>

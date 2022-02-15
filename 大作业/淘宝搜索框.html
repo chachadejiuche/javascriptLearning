@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style-type: none;
+        }
+        a:hover,a:visited{
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+        }
+        #taobao_search:hover{
+            border-top-left-radius: 45px;
+            border-bottom-left-radius: 45px;
+        }
+        .search{
+            height: 45px;
+            width: 682px;
+            margin: 50px auto;
+            position: relative;
+        }
+        .search_border{
+            box-sizing: border-box;
+            height: 100%;
+            width: 601px;
+            border: 1px solid #ff5900;
+            border-top-left-radius: 45px;
+            border-bottom-left-radius: 45px;
+            position: absolute;
+        }
+        #taobao_search{
+            position: absolute;
+            box-sizing: border-box;
+            height: 43px;
+            width: 556px;
+            border-style:none;
+            outline-style:none; 
+            top: 1px;
+            left: 40px;
+            position: absolute;
+        }
+        .search_btn{
+            height: 100%;
+            width: 81px;
+            background-color: #ff8800;
+            border-top-right-radius: 45px;
+            border-bottom-right-radius: 45px;
+            text-align: center;
+            color: white;
+            position: absolute;
+            left: 601px;
+            line-height: 45px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="search">
+        <div class="search_border"><input type="text" name="search" id="taobao_search"></div>
+        <a href="#"><div class="search_btn"><span>搜索</span></div></a>
+    </div>
+</body>
+</html>

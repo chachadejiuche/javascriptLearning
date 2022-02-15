@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击我" id="button">
+    <script>
+        var btn = document.getElementById("button");
+        btn.attachEvent("onclick",fun1,false);
+        btn.attachEvent("onclick2",fun2,false);
+        function fun2(){
+            alert(1);
+        }
+        function fun1 (){
+            alert(this==btn);
+        }  
+    </script>
+</body>
+</html>

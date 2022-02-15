@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="01.jpg" alt="图片" id="tu">
+    <input type="button" value="改变图片" id="tu2">
+    <script>
+        var change=document.getElementById("tu2");
+        var tu = document.getElementById("tu");
+        change.onclick=function(){
+            tu.setAttribute("src","02.jpg");
+
+        }
+    </script>
+</body>
+</html>

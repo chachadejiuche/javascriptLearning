@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #combination td{
+            width: 83px;
+            height: 48px;
+        }
+        #combination .img11{
+            background-image: url(./gameTab2.jpg);
+        }
+        #combination .img1{
+            background-image: url(./gameTab1.jpg);
+        }
+        #combination .img22{
+            background-image: url(./mobileTab2.jpg);
+        }
+        #combination .img2{
+            background-image: url(./mobileTab1.jpg);
+        }
+        #combination tr:nth-child(2) td{
+            height: 122px;
+            width: 165px;
+            background-color: #fff;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0 ,0.2);
+            border-radius: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 83 * 47 /49
+    165 * 170 -->
+    <div id="combination">
+        <table>
+        <tr>
+            <td class="img1 "></td>
+            <td class="img2 "></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+    </div>
+    <script src="../JQueryStudying/jquery3.4.js"></script>
+    <script>
+        // console.log($("#combination tr:nth-child(2) td"));
+        swiChange($("#combination tr:nth-child(1) td:nth-child(1)"));
+        swiChange($("#combination tr:nth-child(1) td:nth-child(2)"));
+        function swiChange(Yelement){
+            console.log(Yelement.hasClass("img1"));
+            if(Yelement.hasClass("img1")){
+                Yelement.click(function(){
+                    Yelement.toggleClass("img11");
+                    Yelement.toggleClass("img1");
+                    if(Yelement.hasClass("img11")){
+                        if($("#combination tr:nth-child(1) td:nth-child(2)").hasClass("img22")){
+                            $("#combination tr:nth-child(1) td:nth-child(2)").removeClass("img22");
+                            $("#combination tr:nth-child(1) td:nth-child(2)").addClass("img2");
+                        }
+                    }
+                });
+            }
+            if(Yelement.hasClass("img2")){
+                Yelement.click(function(){
+                oneChoose = $(this);
+                    oneChoose.toggleClass("img22");
+                    oneChoose.toggleClass("img2");
+                    if(Yelement.hasClass("img22")){
+                        if($("#combination tr:nth-child(1) td:nth-child(1)").hasClass("img11")){
+                            $("#combination tr:nth-child(1) td:nth-child(1)").removeClass("img11");
+                            $("#combination tr:nth-child(1) td:nth-child(1)").addClass("img1");
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

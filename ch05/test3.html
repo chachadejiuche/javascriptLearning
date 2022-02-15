@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>DOM0级中的事件对象</h3>                      
+	<input id="btn01" type="button" value="问好"/>   
+	<hr/>   
+    <script>
+        var a = document.getElementById("btn01");
+        a.onclick = function (Oevent){
+            if(window.event) Oevent = window.event;
+            alert(Oevent.type);
+        }
+    </script>                            
+</body>
+</html>

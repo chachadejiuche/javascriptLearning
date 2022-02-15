@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post" id="myform">
+        球类
+        <p>
+            <select  id="ball" name="ball" multiple="multiple">
+                <option value="Football">足球</option>
+                <option value="Basketball">篮球</option>
+                <option value="Volleyball">排球</option>
+            </select>
+        </p>
+        <input type="button" value="下面添加乒乓球" onclick="remove('ball',2)">
+    </form>
+    <script>
+        function remove(box,num){
+            var form = document.forms[0];
+            var select = form.elements[box];
+            select.options[num]=null;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span style="display:block; position: absolute; top: 0px; left: 0px;">文字</span>
+    <input type="button" value="点我移动" onclick="start()">
+    <script>
+        var timer;
+        var hei=0;
+        var i=1;
+        function fun1(){
+            if(hei<100){
+            if(hei<25){
+                i=i+0.5;
+            }
+            if(hei>=75){
+                i=i-0.5;
+            }
+            hei++;
+            var font = document.getElementsByTagName("span")[0].style.top=hei+"px";
+            timer=setTimeout(fun1,i);
+            }
+        }
+        function start(){
+            fun1();
+        }
+    </script>
+</body>
+</html>

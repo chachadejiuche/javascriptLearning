@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+
+<body>
+    <i class='bx bxs-star' ></i>
+    <i class='bx bxs-star' ></i>
+    <i class='bx bxs-star' ></i>
+    <i class='bx bxs-star' ></i>
+    <i class='bx bxs-star' ></i>
+    <script src="../JQueryStudying/jquery3.4.js"></script>
+    <script>
+        $(".bx").mousemove(function(){
+                $(this).css("color","red");
+                $(this).prevAll(".bx").css("color","red");
+                $(this).nextAll(".bx").css("color","black");
+        })
+    </script>
+</body>
+
+</html>

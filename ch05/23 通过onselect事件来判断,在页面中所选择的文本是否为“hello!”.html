@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="xuanze">
+        <option value="">hi</option>
+        <option value="hello">hello</option>
+        <option value="">hey</option>
+        <option value="">you</option>
+        <option value="">how</option>
+    </select>
+    <script>
+        var xuanze = document.getElementsByName("xuanze")[0];
+        xuanze.onchange = function(){
+            if(this.value=="hello"){
+                alert("hello");
+            }
+        }
+    </script>
+</body>
+</html>

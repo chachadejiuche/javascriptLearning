@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            perspective:2000px;
+        }
+        #cube{
+            width: 300px;
+            height: 300px;
+            margin: 300px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotate3d(1,1,0,30deg);
+        }
+        #cube div{
+            height: 300px;
+            width: 300px;
+            background-color: cadetblue;
+            position: absolute;
+            border-radius: 15px 15px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+            color: white;
+            border: 1px solid palegoldenrod;
+        }
+        #cube .left{
+            transform: rotateY(90deg) translateZ(-150px);
+        }
+        #cube .right{
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        #cube .top{
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        #cube .bottom{
+            transform: rotateX(90deg) translateZ(-150px);
+        }
+        #cube .front{
+            transform: rotateZ(90deg) translateZ(150px);
+        }
+        #cube .rear{
+            transform: rotateZ(90deg) translateZ(-150px);
+        }
+        #cube:hover{
+            animation: animate .6s ease-in-out;
+        }
+        @keyframes animate {
+            from{
+                transform: rotate3d(1,1,0,30deg);
+                top: 0px;
+            }
+            to{
+                transform: rotate3d(1,1,0,-330deg);
+                top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="cube">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="top">top</div>
+        <div class="bottom">bottom</div>
+        <div class="front">front</div>
+        <div class="rear">rear</div>
+    </div>
+</body>
+</html>

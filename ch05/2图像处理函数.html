@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- //1575*2231 -->
+<body>
+    <div id="box" style="height: 223px; width: 157px; background-image: url(titanic.jpg); border: 3px solid black; background-repeat: no-repeat; background-size: 223px,157px;"></div>
+    <span id="text"></span>
+    <script>
+        var str="";
+        var box = document.getElementById("box");
+        box.addEventListener("mouseenter",function(e){
+            var text = document.getElementById("text");
+            str+=e.type+"<br>"
+            text.innerHTML=str;
+        })
+        box.addEventListener("mouseover",function(e){
+            var text = document.getElementById("text");
+            str+=e.type+"<br>"
+            text.innerHTML=str;
+        })
+    </script>
+</body>
+</html>

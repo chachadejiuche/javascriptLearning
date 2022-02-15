@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		#circleBox,
+		#circleBox2 {
+			height: 70px;
+			width: 70px;
+			background-color: cadetblue;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+			text-align: center;
+			color: white;
+			line-height: 70px;
+			position: absolute;
+			font-size: 9px;
+		}
+
+		#circleBox2 {
+			margin: 100px 100px;
+		}
+
+		/* grabbing */
+	</style>
+</head>
+
+<body>
+	<div id="circleBox"></div>
+	<div id="circleBox2"></div>
+	<script type="text/javascript">
+		var move = document.getElementById("circleBox");
+		var box = document.getElementById("circleBox2");
+		move.style.cursor = "grab";
+		move.onmousedown = function (e) {
+			move.style.cursor = "grabbing";
+			event = e || window.event;
+			var t = event.clientY - move.offsetTop;
+			var l = event.clientX - move.offsetLeft;
+			// console.log(event.clientY);
+			document.onmousemove = move.onmousemove = function (e) {
+				event = e || window.event;
+				var x = event.clientX - l;
+				var y = event.clientY - t;
+				var left = move.offsetLeft + move.offsetWidth;
+				var top = move.offsetTop + move.offsetHeight;
+				move.style.left = x + "px";
+				move.style.top = y + "px";
+				if(move.offsetLeft<0){
+					move.style.left = 0 + "px"; 
+				}
+				if(move.offsetLeft>document.body.offsetWidth){
+					move.style.left = document.body.offsetWidth + "px"; 
+				}
+				if(move.offsetTop<0){
+					move.style.top = 0 + "px"; 
+				}
+				if(move.offsetTop>document.body.offsetHeight){
+					move.style.top = document.body.offsetHeight + "px"; 
+				}
+				if(left>=100&&left<=240&&top>=100&&top<=240){
+					if(event.clientY>=30&&event.clientY<=100){
+						move.style.top = 30 + "px";
+					}
+					if(event.clientY>=170&&event.clientY<=240){
+						move.style.top = 170 + "px";
+					}
+					if(event.clientX>=30&&event.clientX<=100){
+						move.style.left = 30 + "px";
+					}
+					if(event.clientX>=170&&event.clientX<=240){
+						move.style.left = 170 + "px";
+					}
+				}
+			}
+		}
+		move.onmouseup = function (e) {
+			move.style.cursor = "grab";
+			document.onmousemove = null;
+			move.onmousemove = null;
+		}
+	</script>
+</body>
+
+</html>

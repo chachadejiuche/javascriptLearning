@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="点击">
+    <input type="button" value="移除" id="btn2">
+    <script>
+        // navigator.appVersion
+        // navigator.appName
+        // navigator.appCodeName
+         alert(navigator.appCodeName);
+        if (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion.split(";")[1].replace(/[ ]/g, "").replace("MSIE", "")) < 11) {
+            var btn = document.getElementsByTagName("input")[0];
+            var btn1 = document.getElementById("btn2");
+            //这里使用attachEvent、deadchEvent方法并且点击方法变成了‘onclick’
+            btn.attachEvent("onclick", fun1);
+            btn.attachEvent("onclick", fun2);
+            btn2.attachEvent("onclick", function () {
+                btn.detachEvent("onclick", fun1);
+                btn.detachEvent("onclick", fun2);
+            });
+            function fun1() {
+                alert("这是方法1");
+            }
+            function fun2() {
+                alert("这是方法2");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="checkbox" name="checkbox1" value="读书">读书
+        <input type="checkbox" name="checkbox1" value="打游戏">打游戏
+        <input type="checkbox" name="checkbox1" value="写代码">写代码
+        <input type="checkbox" name="checkbox1" value="看电视剧">看电视剧
+        <input type="checkbox" name="checkbox1" value="写作业">写作业
+        <input type="checkbox" name="checkbox1" value="睡觉">睡觉
+        <input type="checkbox" name="checkbox1" value="上课">上课
+        <input type="checkbox" name="checkbox1" value="吃饭">吃饭
+        <input type="checkbox" name="checkbox1" value="聊天">聊天
+        <input type="checkbox" name="checkbox1" value="走神">走神
+        <input type="button" value="全选" onclick="fun(1)">
+        <input type="button" value="全不选" onclick="fun(0)">
+        <script>
+            function fun(num){
+                var checked = document.getElementsByName("checkbox1");
+                if(num==1){
+                    for(var i=0;i<checked.length;i++){
+                        checked[i].checked=true;
+                    }
+                }
+                else{
+                    for(var i=0;i<checked.length;i++){
+                        checked[i].checked=false;
+                    }
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

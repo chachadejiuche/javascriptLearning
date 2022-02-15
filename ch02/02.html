@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function a(q,w){
+				q=1;
+				w=1;
+				alert(q+w);
+			}
+			a();
+			function a(q){
+				q=1;
+				alert(q);
+			}
+			document.write("运行函数a："+a.toString());
+			document.write("发现原来的函数被覆盖了");
+		</script>
+	</body>
+</html>

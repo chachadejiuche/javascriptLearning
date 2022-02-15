@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Html</li>
+        <li>Css</li>
+        <li>JavaScript</li>
+        <li>ASP .NET</li>
+        <li>JSP</li>
+        <li>PHP</li>
+    </ul>
+    <script>
+        var li = document.getElementsByTagName("li");
+        var str="";
+        for(var i=0;i<li.length;i++){
+            if(li[i].hasChildNodes){
+                str+=li[i].nodeName+"\n";
+            }
+        }
+        alert(str);
+    </script>
+</body>
+</html>

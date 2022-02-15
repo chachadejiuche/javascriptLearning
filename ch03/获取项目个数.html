@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+           list-style-position: outside; 
+        }
+    </style>
+</head>
+<body>
+    <ul>客户端语言
+        <li>Html</li>
+        <li>Css</li>
+        <li>JavaScript</li>
+    </ul>
+    <ul>服务器端语言
+        <li>ASP .NET</li>
+        <li>JSP</li>
+        <li>PHP</li>
+    </ul>
+    <script>    
+        (function(){
+            var tagName=document.getElementsByTagName("li");
+            alert(tagName.length+""+tagName[3].nodeName+""+tagName[3].childNodes[0].nodeValue);
+            var ul = document.getElementsByTagName("ul");
+            var li = ul[1].getElementsByTagName("li");
+            alert(li.length+""+li[0].nodeName+""+li[0].childNodes[0].nodeValue);
+        })();
+    </script>
+</body>
+</html>

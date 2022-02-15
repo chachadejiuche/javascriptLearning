@@ -1,0 +1,12 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		请输入小数点和数字并使文本框失去焦点：<input type="text"/>
+        <input type="text" onkeyup="value=value.replace(/^\D*(\d*(?:\.\d{0,})?)*$/g, '$1');"/> 
+	</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            /* list-style: none; */
+        }
+
+        header {
+            height: 100px;
+            width: 600px;
+            margin: 10px auto;
+            background-color: #4e6ef2;
+            position: relative;
+            margin-bottom: 0px;
+        }
+
+        header span {
+            height: 40px;
+            width: 130px;
+            letter-spacing: 5px;
+            margin-top: 33px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        header #perv {
+            top: 30px;
+            float: left;
+        }
+
+        header #next {
+            float: right;
+        }
+
+        header h2 {
+            display: inline-block;
+            color: white;
+            font-family: '楷体';
+            font-size: 24px;
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            left: 180px;
+            top: 30px;
+        }
+
+        table {
+            height: 400px;
+            width: 600px;
+            margin: 0px auto;
+            text-align: center;
+            border: 2px solid #4e6ef2;
+            border-collapse: collapse;
+        }
+
+        tr {
+            height: 55px;
+            border-right: 1px solid gray;
+        }
+
+        th,
+        td {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <div id="box2"></div>
+    <!-- <header>
+        <span id="perv">上一个月</span>
+        <span id="next">下一个月</span>
+        <h2>2020年6月</h2>
+    </header> -->
+
+    <!-- <thead>
+        <tr>
+            <th style="border-color: 1px solid red;">星期日</th>
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期三</th>
+            <th>星期四</th>
+            <th>星期五</th>
+            <th>星期六</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>        
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>        
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>        
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>        
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>        
+    </tbody> -->
+    </table>
+    <script src="../JQueryStudying/jquery3.6.js"></script>
+    <script>
+        $(function () {
+            var defaultDate = new Date(2021, 11);
+            var yearMouthTitleDiv = null;
+            var preMonthSpan = null;
+            var nextMonthSpan = null;
+            var tBody = null;
+            var allTd = [];
+            var year = new Date().getFullYear();
+            var month = new Date().getMonth() + 1;
+            var day = new Date().getDate();
+            var week = new Date(year, month - 1, 1).getDay();
+            var days = new Date(year, month, 0).getDate();
+            let j = week;
+            var i = 1;
+            create();
+            showDate(year,month,week,day,days);
+            setNextPrev();
+            function create() {
+                var box = $("#box");
+                var mytable = $("#box2");
+                var header = $(`<header>
+                <span id="perv">上一个月</span>
+                <span id="next">下一个月</span>
+                <h2>2020年6月</h2>
+            </header></table>`);
+                var thead = $(`<table bgcolor="#eaeaea" id="mytable"><tr><th>星期日</th><th>星期一</th><th>星期二</th><th>星期三</th><th>星期四</th><th>星期五</th><th>星期六</th></tr></table>
+            `);
+                box.append(header);
+                mytable.append(thead);
+                tBody = mytable.find("tbody");
+                for (var i = 0; i < 6; i++) {
+                    var tr = $("<tr></tr>");
+                    for (var j = 0; j < 7; j++) {
+                        var td = $("<td></td>");
+                        tr.append(td);
+                        allTd.push(td);
+                    }
+                    tBody.append(tr);
+                }
+            }
+            function showDate(y,m,w,d,ds) {
+                var h2Title = $("header h2");
+                j=week;
+                for (let i = 1; i <= ds; i++) {
+                    allTd[j].text(i);
+                    j++;
+                }
+                h2Title.text(y + "年" + m + "月" + d + "日");
+            }
+            function setNextPrev() {
+                var perv = $("header #perv");
+                var next = $("header #next");
+                var h2Title = $("header h2");
+                perv.click(function () {
+                    for (let i = 0; i < allTd.length; i++) {
+                        allTd[i].empty();
+                    }
+                    month=(Math.abs(month-i))%12;
+                    days = new Date(year, month, 0).getDate();
+                    week = new Date(year, month - 1, 1).getDay();
+                    showDate(year,month,week,day,days);
+                })
+                // next.click(function(){})
+            }
+        })
+    </script>
+</body>
+
+</html>

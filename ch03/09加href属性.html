@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id="link">自学网</a>
+    <script>
+        var link = document.getElementById("link");
+        var linkTo = document.createAttribute("href");
+        linkTo.nodeValue="http://www.51zxw.com";
+        link.setAttributeNode(linkTo);
+        //其他的方式：
+        // link.setAttribute("href","http://www.baidu.com");
+        // link.href="http://www.baidu.com";
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>注册</TITLE>
+<SCRIPT language="JavaScript" >
+  function checkForm( )
+  {
+	 if ( document.myform.txtUserName.value.length==0)
+	 {
+	     alert("用户名不能为空！");
+		 document.myform.txtUserName.focus( );
+	 }
+  }
+</SCRIPT>
+
+ </HEAD>
+
+<BODY>
+<FORM name="myform" id="myform" action="reg_success.htm" >
+<TABLE width="472" border="0" align="center" cellpadding="0" cellspacing="0">
+  <TR>
+    <TD colspan="2"><IMG src="images/1.gif" width="273" height="59"><IMG src="../example6/2.gif" width="1" height="75"><IMG src="images/2.gif" width="393" height="59"></TD>
+  </TR>
+  <TR>
+    <TD width="185" align="center">&nbsp;&nbsp;&nbsp;&nbsp;姓名 </TD>
+    <TD width="287"><INPUT name="txtUserName" type="text" id="txtUserName" size="25"></TD>
+  </TR>
+  <TR>
+    <TD align="center">省份 </TD>
+    <TD><SELECT name="selProvince" id="selProvince" onChange="changeCity( )">
+      <OPTION>--请选择开户帐号的省份--</OPTION>
+      <OPTION value="四川省">四川省</OPTION>
+      <OPTION value="山东省">山东省</OPTION>
+      <OPTION value="湖北省">湖北省</OPTION>
+                        </SELECT></TD>
+  </TR>
+  <TR>
+    <TD><DIV align="center">城市</DIV></TD>
+    <TD><SELECT name="selCity" id="selCity" onChange="myfun1( )">
+      <OPTION>--请选择开户帐号的城市--</OPTION>
+      <OPTION>成都</OPTION>
+      <OPTION>绵阳</OPTION>
+      <OPTION>武汉</OPTION>
+      <OPTION>襄樊</OPTION>
+      <OPTION>烟台</OPTION>
+      <OPTION>青岛</OPTION>
+       
+            </SELECT></TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR>
+    <TD colspan="2"><DIV align="center"><IMG src="images/regquick.jpg" width="114" height="27" onClick="checkForm( )"></DIV></TD>
+  </TR>
+  <TR>
+    <TD colspan="2">&nbsp;</TD>
+    </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

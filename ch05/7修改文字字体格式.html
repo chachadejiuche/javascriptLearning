@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text{
+            font-family: "宋体";
+            font-size: large;
+            font-weight: bold;
+        }
+        .text2{
+            font-family: "华文行楷";
+            font-size: large;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="确定" id="btn" onclick="gaibian()">
+    <span class="text">javascript教程</span>
+    <script>
+        function gaibian(){
+            var a = document.getElementsByClassName("text")[0];
+            // a.setAttribute("class","text2");
+            a.classList.add("text2");
+            // a.classList.remove
+        }
+    </script>
+</body>
+</html>

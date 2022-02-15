@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="b" style="height:100px; width:400px; background-color:slateblue; text-align: center;">请点击</div>
+    <script>
+        if(window.addEventListener){
+            var b = document.getElementById("b");
+            b.addEventListener("click",function(){alert("你点击了div")});
+        }
+        if(window.attachEvent){
+            var b = document.getElementById("b");
+            b.attachEvent("onclick",function(){alert("你点击了div")});
+        };
+    </script>
+</body>
+</html>

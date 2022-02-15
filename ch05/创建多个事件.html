@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="a">请点击1</button>
+    <button id="b">请点击2</button>
+    <script>
+        var a = document.getElementById("a");
+        a.addEventListener("click", function fun1(){
+            alert("这是方法1");
+        },false);
+        a.addEventListener("click", function fun2(){
+            alert("这是方法2");
+        },false);
+        function fun1(){
+            alert("这是修改的方法1");
+        }
+        b.addEventListener("click",fun1,false);
+        b.addEventListener("click",fun1,false);
+    </script>
+</body>
+</html>

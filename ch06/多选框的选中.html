@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <select id="select1" multiple="multiple">
+            <option value="信">信</option>
+            <option value="城">城</option>
+            <option value="德">德</option>
+            <option value="忠">忠</option>
+            <option value="勤">勤</option>
+            <option value="乐">乐</option>
+        </select>
+    </form>
+    <script>
+        var select1 = document.forms[0].select1;
+        var opt = document.getElementsByTagName("option");
+        var arr = new Array();
+        select1.onchange = function () {
+            console.log(select1.options.length);
+            for (var i = 0; i < select1.options.length; i++) {
+                if (select1.options[i].selected) {
+                    arr.push(select1.options[i].value);
+                }
+            }
+            alert("您选了" + arr.join());
+            arr.length=0;
+        }
+    </script>
+</body>
+
+</html>

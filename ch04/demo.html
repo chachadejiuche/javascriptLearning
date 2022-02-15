@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function easeInOutQuad(currentTime, startValue, changeValue, duration) {
+        currentTime /= duration / 2;
+        if (currentTime < 1) return changeValue / 2 * currentTime * currentTime + startValue;
+        currentTime--;
+        return -changeValue / 2 * (currentTime * (currentTime - 2) - 1) + startValue;
+      }
+      alert(easeInOutQuad(100000,11110,100,100000));
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数表达式与函数声明的区别</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fun1(){
+				var a=1;
+				var b=2;
+				document.write(a+b+"<br>");
+			}
+			var a=function fun2(){
+				return 2;
+			}
+			fun1();
+			document.write(a());
+		</script>
+	</body>
+</html>

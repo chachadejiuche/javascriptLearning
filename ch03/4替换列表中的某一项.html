@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="mylist">
+        <li id>苹果</li>
+        <li>梨</li>
+    </ul>
+    <button onclick="fun1()">添加列表项</button>
+    <script>
+        function fun1(){
+        var node=document.createElement("LI");
+        var textnode=document.createTextNode("香蕉");
+        node.appendChild(textnode);
+        var a=document.getElementById("mylist");a.insertBefore(node,a.childNodes[0]);
+        }
+    </script>
+</body>
+</html>

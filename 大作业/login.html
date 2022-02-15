@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        #background{
+            height: calc(100vh);
+        }
+        #background::before{
+            content: "";
+            height: calc(100vh);
+            display: flex;
+            background-image: url(./pexels-taryn-elliott-5405596.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            filter: blur(15px);
+        }
+
+        #login {
+            position: absolute;
+            /* display: flex; */
+        }
+
+        #blur {
+            height: 100%;
+            width: 100%;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background"> <div id="login">
+
+        <div class="loginLeft">
+            <img src="" alt="">
+        </div>
+
+        <div class="loginRight">
+            <div class="loginTitle">
+                登录
+            </div>
+
+            <div>
+                <label>邮箱</label>
+                <div class="">
+                    <input type="text" name="email" placeholder="用户名/邮箱">
+                </div>
+            </div>
+
+            <div>
+                <label>密码</label>
+                <div class="">
+                    <input type="password" name="password" placeholder="用户名/邮箱">
+                </div>
+            </div>
+
+            <div>
+                <label><a>注册</a></label>
+                <label><a>忘记密码</a></label>
+            </div>
+
+            <div>
+                <div class="">
+                    <button type="submit" id="login">登录</button>
+                </div>
+            </div>
+        </div>
+    </div></div>
+   
+</body>
+
+</html>

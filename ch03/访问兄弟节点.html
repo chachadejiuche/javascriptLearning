@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Html</li>
+        <li>Css</li>
+        <li>JavaScript</li>
+        <li>ASP.NET</li>
+        <li>JSP</li>
+        <li>PHP</li>
+    </ul>
+    <script>
+        var ji = document.getElementsByTagName("li");
+        var str="";
+        var prev=ji[3].previousElementSibling.childNodes[0].nodeValue;
+        var next=ji[3].nextElementSibling.childNodes[0].nodeValue;
+        str="前一项是"+prev+"后一项是"+next;
+        alert(str);
+    </script>
+</body>
+</html>

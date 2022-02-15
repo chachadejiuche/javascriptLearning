@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="打开新窗口" onclick="openwindow()">
+    <input type="button" value="关闭打开的窗口" onclick="closeMy()">
+    <input type="button" value="关闭当前窗口" onclick="closeAll()">
+    <script>
+        var myWindow;
+        function openwindow(){
+            myWindow=window.open("open_1.htm",null,"height=100,width=200,status=no,toolbar=no,menubar=no,location=no");
+        }
+        function closeMy(){
+            myWindow.close();
+        }
+        function closeAll(){
+            window.close();
+        }
+    </script>
+</body>
+</html>

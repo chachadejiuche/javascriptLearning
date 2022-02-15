@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //赋值对象,就是获取对象的引用地址，改变原来对象，赋值的对象也会跟着改变
+        var obj = {
+            name:"小明",
+            say : function() {
+                console.log("My name is"+name)
+            },
+            skill : ["piano","vivlin","Singing"],
+            family : {
+                mom: "小花",
+                dad:"小华"
+            }
+        }
+        var obj1=obj;
+        console.log(obj);
+        console.log("=================");
+        console.log(obj1);
+        obj.name = "小强";
+        console.log(obj1.name);
+        obj1.family.dad = "xiaohei";
+        console.log(obj.family.dad);
+        //浅拷贝
+        //浅拷贝不会改变第一层的数据，但会改变子对象的数据
+        console.log("=================");
+        function shallowCopy(o){
+            var copy = {};
+            for (var i in o) {
+                if (o.hasOwnProperty(i)) {
+                    copy[i] = o[i];
+                }
+            }
+            return copy;
+        }
+        var obj2 = shallowCopy(obj);
+        obj2.name="强强";
+        console.log(obj2);
+        console.log(obj);
+        obj2.family.dad = "xiaohei";
+        console.log(obj.family.dad);
+        function deepCopy(o){
+            var copy = {}
+            for(var p in o){
+                if (o.hasOwnProperty(p)){
+                    if (typeof o[p] === 'object'){
+                        copy[p] = shallowCopy(o[p]);
+                    }
+                    else{
+                        copy[p]=o[p];
+                    }
+                }
+            }
+            return copy;
+        }
+        var obj4 = deepCopy(obj);
+        console.log("===================");
+        obj4.family.dad="hah";
+        console.log(obj4);
+        console.log(obj);
+    </script>
+</body>
+</html>

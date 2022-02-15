@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body >
+		<form name="form1" method="post">
+			<input type="text" name="field" onbeforepaste="return clearup()" value="text"/>
+		</form>
+        <script type="text/javascript">
+            function clearup(){
+                window.clipboardData.setData("text","");  //清空剪切板
+            }
+        </script>
+	</body>	
+</html>
